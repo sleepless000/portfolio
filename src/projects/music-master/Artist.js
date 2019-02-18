@@ -7,9 +7,9 @@ const Artist = ({ artist }) => {
 
   return (
     <div>
-      <h3>{name}</h3>
+      <h2 style={{ paddingTop: 20 }}>{name}</h2>
       <p>{followers.total} followers</p>
-      <p>{genres.join(',')}</p>
+      <p>{genres.join(', ')}</p>
       <img
         src={images[0] && images[0].url}
         alt="artist-profile"

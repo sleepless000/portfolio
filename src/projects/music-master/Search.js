@@ -19,13 +19,24 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        className="input-group mb-3"
+        style={{ maxWidth: '20rem', margin: '0 auto' }}
+      >
         <input
+          className="form-control"
           onChange={this.updateArtistQuery}
           onKeyPress={this.handleKeyPress}
           placeholder="Search for an Artist"
         />
-        <button onClick={this.searchArtist}>Search</button>
+        <div className="input-group-append">
+          <button
+            className="btn btn-outline-primary"
+            onClick={this.searchArtist}
+          >
+            Search
+          </button>
+        </div>
       </div>
     );
   }

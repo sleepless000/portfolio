@@ -7,19 +7,20 @@ const Artist = ({ artist }) => {
 
   return (
     <div>
-      <h2 style={{ paddingTop: 20 }}>{name}</h2>
-      <p>{followers.total} followers</p>
-      <p>{genres.join(', ')}</p>
       <img
         src={images[0] && images[0].url}
         alt="artist-profile"
         style={{
+          margin: 20,
           width: 200,
           height: 200,
           borderRadius: 100,
           objectFit: 'cover'
         }}
       />
+      <h2>{name}</h2>
+      <p>{followers.total} followers</p>
+      <p>{genres.join(', ')}</p>
     </div>
   );
 };

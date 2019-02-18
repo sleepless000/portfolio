@@ -1,6 +1,4 @@
-import project1 from '../assets/project1.png';
-import project2 from '../assets/project2.png';
-import project3 from '../assets/project3.png';
+import proj_img from '../assets/200x120.png';
 
 const PROJECTS = [
   {
@@ -9,7 +7,7 @@ const PROJECTS = [
     description:
       'A React App that I built, involving JS and core web dev concepts!',
     link: '#',
-    image: project1
+    image: proj_img
   },
   {
     id: 2,
@@ -17,7 +15,7 @@ const PROJECTS = [
     description:
       'A REST API that I built from scratch with GET and POST requests!',
     link: '#',
-    image: project2
+    image: proj_img
   },
   {
     id: 3,
@@ -25,7 +23,7 @@ const PROJECTS = [
     description:
       'My unique final project for my university Operating Systems course.',
     link: '#',
-    image: project3
+    image: proj_img
   }
 ];
 

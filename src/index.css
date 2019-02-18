@@ -2,8 +2,9 @@ body {
   text-align: center;
   font-size: 20px;
   padding: 2.5%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 800;
+  background-color: #f5f5f5;
 }
 
 h1,
@@ -11,13 +12,14 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Economica', sans-serif;
 }
 
 .profile {
   width: 200px;
   height: 200px;
   border-radius: 100px;
+  object-fit: cover;
 }
 
 .title-fade-out {

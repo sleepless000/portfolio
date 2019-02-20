@@ -14,7 +14,9 @@ class Search extends Component {
   };
 
   searchArtist = () => {
-    this.props.searchArtist(this.state.artistQuery);
+    const { artistQuery } = this.state;
+    if (!artistQuery) return;
+    this.props.searchArtist(artistQuery);
   };
 
   render() {

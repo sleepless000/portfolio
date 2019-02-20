@@ -33,11 +33,11 @@ class App extends Component {
       const { artists } = await resposnse.json();
 
       if (artists.items.length === 0)
-        this.setState({ loading: false, error: 'No results' });
+        return this.setState({ loading: false, error: 'No results' });
 
       if (artists.total > 0) {
         const artist = artists.items[0];
-        this.setState({ artist }, setLocalItem('artist', artist));
+        this.setState({ artist, error: null }, setLocalItem('artist', artist));
 
         const response = await fetch(
           `${API_ADDRESS}/artist/${artist.id}/top-tracks`

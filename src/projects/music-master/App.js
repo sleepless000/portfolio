@@ -11,7 +11,11 @@ class App extends Component {
   state = { artist: null, tracks: [], loading: true, error: null };
 
   componentDidMount() {
-    this.loadLocalStorageItems();
+    if (getLocalItem('tracks')) {
+      this.loadLocalStorageItems();
+    } else {
+      this.searchArtist('moderat');
+    }
   }
 
   loadLocalStorageItems = () => {

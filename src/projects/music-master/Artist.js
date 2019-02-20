@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNumber } from '../../utils';
 
 const Artist = ({ artist }) => {
   if (!artist) return null;
@@ -19,7 +20,7 @@ const Artist = ({ artist }) => {
         }}
       />
       <h2>{name}</h2>
-      <p>{followers.total} followers</p>
+      <p>{formatNumber(followers.total)} followers</p>
       <p>{genres.join(', ')}</p>
     </div>
   );

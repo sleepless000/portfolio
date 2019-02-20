@@ -1,28 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const style = {
-  display: 'inline-block',
-  margin: 10,
-  marginBottom: 30
+  // display: 'inline-block',
+  // margin: 10,
+  // marginBottom: 30
 };
 
 function Header({ children }) {
   return (
     <div>
-      <div>
+      <div className="nav justify-content-center mb-2">
         <h3 style={style}>
-          <Link to="/">Home</Link>
+          <NavLink className="nav-link" to="/">
+            Home
+          </NavLink>
         </h3>
 
         <h3 style={style}>
-          <Link to="/music-master">Music Master</Link>
+          <NavLink className="nav-link" to="/music-master">
+            Music Master
+          </NavLink>
         </h3>
         <h3 style={style}>
-          <Link to="/evens-or-odds">Evens or Odds</Link>
+          <NavLink className="nav-link" to="/evens-or-odds">
+            Evens or Odds
+          </NavLink>
         </h3>
         <h3 style={style}>
-          <Link to="/reaction">Reaction</Link>
+          <NavLink className="nav-link" to="/reaction">
+            Reaction
+          </NavLink>
         </h3>
       </div>
       {children}

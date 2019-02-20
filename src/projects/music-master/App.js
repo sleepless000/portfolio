@@ -1,42 +1,68 @@
 import React, { Component } from 'react';
 import Search from './Search';
-import Artist from './Artist';
-import Tracks from './Tracks';
+import Result from './Result';
+import Loader from './Loader';
+
+import { getLocalItem, setLocalItem } from '../../utils';
 
 const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
 
 class App extends Component {
-  state = { artist: null, tracks: [] };
+  state = { artist: null, tracks: [], loading: true, error: null };
 
   componentDidMount() {
-    this.searchArtist('moderat');
+    this.loadLocalStorageItems();
   }
 
-  searchArtist = artistQuery => {
-    fetch(`${API_ADDRESS}/artist/${artistQuery}`)
-      .then(response => response.json())
-      .then(json => {
-        if (json.artists.total > 0) {
-          const artist = json.artists.items[0];
+  loadLocalStorageItems = () => {
+    this.setState({
+      artist: getLocalItem('artist'),
+      tracks: getLocalItem('tracks'),
+      loading: false
+    });
+  };
 
-          this.setState({ artist });
+  searchArtist = async artistQuery => {
+    try {
+      this.setState({ loading: true });
+      const resposnse = await fetch(`${API_ADDRESS}/artist/${artistQuery}`);
+      const { artists } = await resposnse.json();
 
-          fetch(`${API_ADDRESS}/artist/${artist.id}/top-tracks`)
-            .then(response => response.json())
-            .then(json => this.setState({ tracks: json.tracks }))
-            .catch(error => alert(error.message));
-        }
-      })
-      .catch(error => alert(error.message));
+      if (artists.items.length === 0)
+        this.setState({ loading: false, error: 'No results' });
+
+      if (artists.total > 0) {
+        const artist = artists.items[0];
+        this.setState({ artist }, setLocalItem('artist', artist));
+
+        const response = await fetch(
+          `${API_ADDRESS}/artist/${artist.id}/top-tracks`
+        );
+        const { tracks } = await response.json();
+
+        this.setState(
+          { tracks, loading: false },
+          setLocalItem('tracks', tracks)
+        );
+      }
+    } catch (error) {
+      this.setState({ loading: false, error: error.message });
+    }
   };
 
   render() {
+    const { error, loading, artist, tracks } = this.state;
+    if (loading) return <Loader />;
+
     return (
       <div>
         <h2>Music Master</h2>
         <Search searchArtist={this.searchArtist} />
-        <Artist artist={this.state.artist} />
-        <Tracks tracks={this.state.tracks} />
+        {!!error ? (
+          <div>{error}. Please try again later.</div>
+        ) : (
+          <Result artist={artist} tracks={tracks} />
+        )}
       </div>
     );
   }

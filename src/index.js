@@ -5,12 +5,8 @@ import './index.css';
 import { Root } from './components';
 import * as serviceWorker from './serviceWorker';
 
-function initializeReactGA() {
-  ReactGA.initialize('UA-134863773-1');
-  ReactGA.pageview('/');
-}
-
-initializeReactGA();
+ReactGA.initialize('UA-134863773-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 if (module.hot) {
   module.hot.accept();

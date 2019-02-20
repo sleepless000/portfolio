@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class Tracks extends Component {
   state = { playing: false, audio: null, playingPreviewUrl: null };
 
+  componentWillUnmount() {
+    this.state.audio && this.state.audio.pause();
+  }
+
   playAudio = previewUrl => () => {
     const audio = new Audio(previewUrl);
 

@@ -10,6 +10,8 @@ function initializeReactGA() {
   ReactGA.pageview('/');
 }
 
+initializeReactGA();
+
 if (module.hot) {
   module.hot.accept();
 }

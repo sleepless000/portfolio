@@ -21,7 +21,9 @@ const Artist = ({ artist }) => {
       />
       <h2>{name}</h2>
       <p>{formatNumber(followers.total)} followers</p>
-      <p>{genres.join(', ')}</p>
+      <p>
+        <i>{genres.join(', ')}</i>
+      </p>
     </div>
   );
 };

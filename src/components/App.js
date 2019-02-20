@@ -18,7 +18,7 @@ function App() {
       <p>I'm always looking forward to working on meaningful projects.</p>
       {displayBio ? (
         <div>
-          <p>I live in London, and code every day.</p>
+          <p>I live in London, and I love to code.</p>
           <p>
             My favorite language is JavaScript, and I think React.js is awesome.
           </p>

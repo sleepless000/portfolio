@@ -34,10 +34,10 @@ class Tracks extends Component {
       this.state.playing &&
       this.state.playingPreviewUrl === track.preview_url
     ) {
-      return <span>| |</span>;
+      return <span>&#9724;&#65038;</span>;
     }
 
-    return <span>&#9654;&#65038;</span>;
+    return <span>&#9658;&#65038;</span>;
   };
 
   render() {

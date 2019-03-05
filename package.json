@@ -6,9 +6,12 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-ga": "^2.5.7",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
-    "react-spinners": "^0.5.1"
+    "react-spinners": "^0.5.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,5 +28,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  }
 }

@@ -22,6 +22,7 @@ class Search extends Component {
   render() {
     return (
       <div
+        id="hartbeat"
         className="input-group mb-3"
         style={{ maxWidth: '20rem', margin: '0 auto' }}
       >

@@ -9,7 +9,7 @@ const style = {
 
 function Header({ children }) {
   return (
-    <div>
+    <div id="nav-header">
       <div className="nav justify-content-center mb-2">
         <h3 style={style}>
           <NavLink className="nav-link" to="/">
@@ -25,11 +25,6 @@ function Header({ children }) {
         <h3 style={style}>
           <NavLink className="nav-link" to="/evens-or-odds">
             Evens or Odds
-          </NavLink>
-        </h3>
-        <h3 style={style}>
-          <NavLink className="nav-link" to="/reaction">
-            Reaction
           </NavLink>
         </h3>
       </div>

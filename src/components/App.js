@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      <img src={profile} alt="profile" className="profile" />
+      <img id="photo" src={profile} alt="profile" className="profile" />
       <h1>Hello!</h1>
       <p>My name is Boris.</p>
       <Title />

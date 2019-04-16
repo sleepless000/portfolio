@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Card from './Card';
+import Guess from './Guess';
+import GameState from './GameState';
 
 import { cancelGame, startGame } from '../actions/settings';
 import { fetchNewDeck } from '../actions/deck';
@@ -35,6 +37,10 @@ function App({
       {gameStarted ? (
         <>
           <h3>The game is on!</h3>
+          <br />
+          <GameState />
+          <br />
+          <Guess />
           <br />
           <DrawCard />
 

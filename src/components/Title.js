@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const TITLES = [
-  'a software engineer.',
+  'a web developer.',
   'a problem solver.',
   'passionate about programming.',
   'an enthusiastic learner.'

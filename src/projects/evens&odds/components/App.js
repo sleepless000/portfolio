@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import Card from './Card';
-import Guess from './Guess';
-import GameState from './GameState';
 
 import { cancelGame, startGame } from '../actions/settings';
 import { fetchNewDeck } from '../actions/deck';
+import Card from './Card';
 import DrawCard from './DrawCard';
 import fetchStates from '../reducers/fetchStates';
+import GameState from './GameState';
+import Guess from './Guess';
 import Instructions from './Instructions';
 
 function App({

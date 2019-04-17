@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import settingsReducer from './settings';
 import deckReducer from './deck';
 import gameStateReducer from './gameState';
+import settingsReducer from './settings';
 
 export default combineReducers({
   settings: settingsReducer,

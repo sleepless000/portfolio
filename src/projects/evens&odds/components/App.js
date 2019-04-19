@@ -50,11 +50,12 @@ function App({
         </>
       ) : (
         <>
+          <Instructions />
+          <br />
           <h3>A new game awaits</h3>
           <br />
           <button onClick={startingGame}>Start Game</button>
           <hr />
-          <Instructions />
         </>
       )}
     </>

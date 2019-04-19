@@ -13,9 +13,7 @@ export const fetchDeckError = error => ({
 
 export const fetchNewDeck = () => async dispatch => {
   try {
-    const res = await fetch(
-      'https://deck-of-cards-api-wrapper.appspot.com/deck/new/shuffle'
-    );
+    const res = await fetch('https://deckofcardsapi.com/api/deck/new/shuffle/');
     if (res.status !== 200)
       throw new Error('Unsuccessful request to deckofcardsapi.com');
     const json = await res.json();
@@ -28,7 +26,7 @@ export const fetchNewDeck = () => async dispatch => {
 export const fetchDrawCard = deck_id => async dispatch => {
   try {
     const res = await fetch(
-      `https://deck-of-cards-api-wrapper.appspot.com/deck/${deck_id}/draw`
+      `https://deckofcardsapi.com/api/deck/${deck_id}/draw/`
     );
     if (res.status !== 200)
       throw new Error('Unsuccessful request to deckofcardsapi.com');
